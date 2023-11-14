@@ -1,8 +1,7 @@
 .contactForm {
   display: flex;
-  justify-content: center;
+  padding-left: 30px;
   background-color: rgb(200, 203, 226);
-  margin: 0, auto;
 }
 
 .form {

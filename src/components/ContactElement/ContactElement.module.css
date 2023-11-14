@@ -17,3 +17,8 @@
   background-color: rgb(92, 119, 151);
   color: rgb(56, 76, 99);
 }
+.itemContact {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+}

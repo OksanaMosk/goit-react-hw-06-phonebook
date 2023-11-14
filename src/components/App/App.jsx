@@ -59,19 +59,23 @@ export const App = () => {
 
   return (
     <div className={css.container}>
-      <h1 className={css.title}>Phonebook</h1>
-      <ContactForm onSubmit={handleAddContact} />
-      <h2 className={css.titleContacts}>Contacts</h2>
-      {contacts.length > 0 ? (
-        <Filter onChangeFilter={changeFilter} />
-      ) : (
-        <p className={css.noContacts}>
-          &#128064;Add your first contact! Your phonebook is empty.&#128064;
-        </p>
-      )}
-      {contacts.length > 0 && (
-        <ContactList contacts={visContacts} onRemoveContact={removeContact} />
-      )}
+      <div className={css.containerLeft}>
+        <h1 className={css.title}>Phonebook</h1>
+        <ContactForm onSubmit={handleAddContact} />
+      </div>
+      <div className={css.containeRight}>
+        <h2 className={css.titleContacts}>Contacts</h2>
+        {contacts.length > 0 ? (
+          <Filter onChangeFilter={changeFilter} />
+        ) : (
+          <p className={css.noContacts}>
+            &#128064;Add your first contact! Your phonebook is empty.&#128064;
+          </p>
+        )}
+        {contacts.length > 0 && (
+          <ContactList contacts={visContacts} onRemoveContact={removeContact} />
+        )}
+      </div>
     </div>
   );
 };
