@@ -59,11 +59,11 @@ export const App = () => {
 
   return (
     <div className={css.container}>
-      <div className={css.containerLeft}>
+      <div>
         <h1 className={css.title}>Phonebook</h1>
         <ContactForm onSubmit={handleAddContact} />
       </div>
-      <div className={css.containeRight}>
+      <div>
         <h2 className={css.titleContacts}>Contacts</h2>
         {contacts.length > 0 ? (
           <Filter onChangeFilter={changeFilter} />
