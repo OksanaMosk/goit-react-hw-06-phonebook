@@ -13,25 +13,7 @@ export const App = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contactsStore.contacts);
   const filter = useSelector(state => state.filterStore.filter);
-  console.log('filter: ', filter);
-
-  // const [contacts, setContacts] = useState(() => {
-  //   const contacts = localStorage.getItem('contacts');
-  //   const parsedContacts = JSON.parse(contacts) ?? [
-  //     { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-  //     { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-  //     { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-  //     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-  //   ];
-
-  //   return parsedContacts;
-  // });
-
-  // const [filter, setFilter] = useState('');
-
-  // useEffect(() => {
-  //   localStorage.setItem('contacts', JSON.stringify(contacts));
-  // }, [contacts]);
+  // console.log('filter: ', filter);
 
   const handleAddContact = (name, number) => {
     if (contacts.find(contact => contact.name === name)) {
