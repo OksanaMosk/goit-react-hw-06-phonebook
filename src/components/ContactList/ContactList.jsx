@@ -9,6 +9,7 @@ export const ContactList = () => {
   const contacts = useSelector(state => state.contactsStore.contacts);
   const filter = useSelector(state => state.filterStore.filter);
   const dispatch = useDispatch();
+
   const removeContact = contactId => {
     dispatch(deleteContacts(contactId));
   };

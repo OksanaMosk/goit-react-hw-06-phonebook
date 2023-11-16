@@ -22,7 +22,6 @@ export function ContactForm() {
       name,
       number,
     };
-
     dispatch(addContacts(finalContacts));
   };
 
