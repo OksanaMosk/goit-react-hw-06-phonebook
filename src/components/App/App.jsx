@@ -3,6 +3,7 @@ import Filter from '../Filter/Filter';
 import ContactList from '../ContactList/ContactList';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
+import { addContacts, deleteContacts } from 'redux/contacts/contacts.reducer';
 
 import css from './App.module.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -39,19 +40,12 @@ export const App = () => {
       name,
       number,
     };
-    const addContactAction = {
-      type: 'contacts/addContacts',
-      payload: finalContacts,
-    };
-    dispatch(addContactAction);
+
+    dispatch(addContacts(finalContacts));
   };
 
   const removeContact = contactId => {
-    const deleteContactsAction = {
-      type: 'contacts/deleteContacts',
-      payload: contactId,
-    };
-    dispatch(deleteContactsAction);
+    dispatch(deleteContacts(contactId));
   };
 
   const changeFilter = event => {
