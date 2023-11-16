@@ -1,6 +1,6 @@
 import css from './ContactElement.module.css';
 
-const ContactElement = ({ id, name, number, onRemoveContact }) => {
+export const ContactElement = ({ id, name, number, onRemoveContact }) => {
   return (
     <li className={css.itemContact} key={id}>
       <p>{name + ':  ' + number}</p>
@@ -17,5 +17,3 @@ const ContactElement = ({ id, name, number, onRemoveContact }) => {
     </li>
   );
 };
-
-export default ContactElement;
