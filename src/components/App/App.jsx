@@ -1,17 +1,20 @@
 import ContactForm from '../ContactForm/ContactForm';
 import Filter from '../Filter/Filter';
 import ContactList from '../ContactList/ContactList';
-import { useState } from 'react';
+
 import { nanoid } from 'nanoid';
 import { addContacts, deleteContacts } from 'redux/contacts/contacts.reducer';
 
 import css from './App.module.css';
 import { useDispatch, useSelector } from 'react-redux';
+import { filters } from 'redux/filter/filter.reducer';
 
 export const App = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contactsStore.contacts);
-  console.log('contacts:', contacts);
+  const filter = useSelector(state => state.filterStore.filter);
+  console.log('filter: ', filter);
+
   // const [contacts, setContacts] = useState(() => {
   //   const contacts = localStorage.getItem('contacts');
   //   const parsedContacts = JSON.parse(contacts) ?? [
@@ -24,7 +27,7 @@ export const App = () => {
   //   return parsedContacts;
   // });
 
-  const [filter, setFilter] = useState('');
+  // const [filter, setFilter] = useState('');
 
   // useEffect(() => {
   //   localStorage.setItem('contacts', JSON.stringify(contacts));
@@ -49,7 +52,7 @@ export const App = () => {
   };
 
   const changeFilter = event => {
-    setFilter(event.target.value);
+    dispatch(filters(event.target.value));
   };
 
   const visibleContacts = () => {
