@@ -9,22 +9,25 @@ export const App = () => {
   const contacts = useSelector(state => state.contactsStore.contacts);
 
   return (
-    <div className={css.container}>
-      <div>
-        <h1 className={css.title}>Phonebook</h1>
-        <ContactForm />
+    <>
+      <h1 className={css.mainTitle}>Phonebook</h1>
+      <div className={css.container}>
+        <div>
+          <h2 className={css.title}>Add contact</h2>
+          <ContactForm />
+        </div>
+        <div>
+          <h2 className={css.titleContacts}>Contacts</h2>
+          {contacts.length > 0 ? (
+            <Filter />
+          ) : (
+            <p className={css.noContacts}>
+              &#128064;Add your first contact! Your phonebook is empty.&#128064;
+            </p>
+          )}
+          {contacts.length > 0 && <ContactList />}
+        </div>
       </div>
-      <div>
-        <h2 className={css.titleContacts}>Contacts</h2>
-        {contacts.length > 0 ? (
-          <Filter />
-        ) : (
-          <p className={css.noContacts}>
-            &#128064;Add your first contact! Your phonebook is empty.&#128064;
-          </p>
-        )}
-        {contacts.length > 0 && <ContactList />}
-      </div>
-    </div>
+    </>
   );
 };
